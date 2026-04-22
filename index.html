@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Meta Title &amp; Description Character Counter</title>
+  <meta name="description" content="Check your SEO title and meta description length instantly. Optimize for Google character limits with live SERP preview." />
+  <meta name="keywords" content="meta title counter, meta description counter, SEO character counter, SERP preview, title length checker, description length checker" />
+  <meta name="author" content="SEO Tools" />
+  <link rel="canonical" href="https://xn--compteur-de-caractres-54b.fr/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Meta Title &amp; Description Character Counter" />
+  <meta property="og:description" content="Check your SEO title and meta description length instantly. Optimize for Google character limits with live SERP preview." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://xn--compteur-de-caractres-54b.fr/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Meta Title &amp; Description Character Counter" />
+  <meta name="twitter:description" content="Check your SEO title and meta description length instantly. Optimize for Google character limits with live SERP preview." />
+
+  <!-- Preconnect for Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Meta Title & Description Character Counter",
+    "description": "Check your SEO title and meta description length instantly. Optimize for Google character limits with live SERP preview.",
+    "url": "https://xn--compteur-de-caractres-54b.fr/",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "Any",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+  }
+  </script>
+</head>
+<body>
+
+<!-- Animated Background Orbs -->
+<div class="bg-orbs" aria-hidden="true">
+  <span></span><span></span><span></span>
+</div>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+<!-- ═══════════════════════════════════════════
+     MAIN WRAPPER
+════════════════════════════════════════════ -->
+<div class="app-wrapper">
+
+  <!-- ── Header ───────────────────────────────── -->
+  <header class="site-header fade-in">
+    <div class="header-brand">
+      <div class="brand-icon" aria-hidden="true">🔍</div>
+      <div class="brand-text">
+        <h1>Free Meta Title &amp; Description Checker</h1>
+        <p>Optimize your Google search snippets instantly · No sign-up needed</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark/light mode" title="Toggle theme">
+        <span id="theme-icon">☀️</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ── Intro ────────────────────────────────── -->
+  <p class="intro-text fade-in">
+    A free, real-time SEO tool for bloggers, marketers, and developers.
+    Type your <strong>meta title</strong> and <strong>description</strong> below and instantly
+    see character counts, color-coded status alerts, pixel-width estimates, and a
+    live <strong>Google SERP preview</strong> — all in one lightweight page.
+  </p>
+
+  <!-- ── Stats Bar ─────────────────────────────── -->
+  <div class="stats-bar fade-in">
+    <div class="stat-pill">
+      <span class="stat-val" id="stat-title-chars">0</span>
+      <span class="stat-lbl">Title Characters</span>
+    </div>
+    <div class="stat-pill">
+      <span class="stat-val" id="stat-desc-chars">0</span>
+      <span class="stat-lbl">Description Characters</span>
+    </div>
+    <div class="stat-pill">
+      <span class="stat-val" id="stat-title-px">0px</span>
+      <span class="stat-lbl">Title Pixel Width</span>
+    </div>
+  </div>
+
+  <!-- ── Table of Contents ─────────────────────── -->
+  <div class="toc-wrapper fade-in" id="toc-section">
+    <div class="toc-header" id="toc-toggle" role="button" aria-expanded="false" aria-controls="toc-body" tabindex="0">
+      <div class="toc-header-left">
+        <span>📑</span> Table of Contents
+      </div>
+      <span class="toc-chevron" id="toc-chevron">▼</span>
+    </div>
+    <div class="toc-body" id="toc-body" role="list">
+      <ul class="toc-list">
+        <li><a href="#section-title"><span class="toc-num">1</span> Meta Title Checker</a></li>
+        <li><a href="#section-desc"><span class="toc-num">2</span> Meta Description Checker</a></li>
+        <li><a href="#section-serp"><span class="toc-num">3</span> Google SERP Preview</a></li>
+        <li><a href="#section-actions"><span class="toc-num">4</span> Quick Actions</a></li>
+        <li><a href="#section-tips"><span class="toc-num">5</span> SEO Tips</a></li>
+        <li><a href="#section-features"><span class="toc-num">6</span> Features at a Glance</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 1 — META TITLE
+  ════════════════════════════════════════════ -->
+  <section class="card fade-in" id="section-title" aria-labelledby="title-heading">
+    <div class="section-label">
+      <div class="icon icon-blue" aria-hidden="true">🏷️</div>
+      <div>
+        <h2 id="title-heading">Meta Title Checker</h2>
+        <span class="sub">Recommended: up to 60 characters · ~570px pixel width</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label for="title-input" class="sr-only">Enter your meta title</label>
+      <input
+        type="text"
+        id="title-input"
+        placeholder="Enter your meta title here…"
+        maxlength="200"
+        autocomplete="off"
+        spellcheck="true"
+        aria-describedby="title-count title-status"
+      />
+    </div>
+
+    <div class="progress-wrap" aria-hidden="true">
+      <div class="progress-bar safe" id="title-progress"></div>
+    </div>
+
+    <div class="counter-row">
+      <span class="counter-badge status-safe" id="title-count">
+        <span class="count-num">0</span>&nbsp;/ 60 chars
+      </span>
+    </div>
+
+    <p class="pixel-info" id="title-pixels">
+      Estimated Google pixel width: <span>0px</span> <em style="color:var(--text-muted)">(limit ~570px)</em>
+    </p>
+    <p class="status-msg safe" id="title-status">✅ Good length (0/60)</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 2 — META DESCRIPTION
+  ════════════════════════════════════════════ -->
+  <section class="card fade-in" id="section-desc" aria-labelledby="desc-heading">
+    <div class="section-label">
+      <div class="icon icon-purple" aria-hidden="true">📝</div>
+      <div>
+        <h2 id="desc-heading">Meta Description Checker</h2>
+        <span class="sub">Recommended: 155–160 characters for full Google display</span>
+      </div>
+    </div>
+
+    <div class="field-group">
+      <label for="desc-input" class="sr-only">Enter your meta description</label>
+      <textarea
+        id="desc-input"
+        placeholder="Enter your meta description here… Write a clear, compelling summary that encourages clicks."
+        maxlength="500"
+        spellcheck="true"
+        aria-describedby="desc-count desc-status"
+      ></textarea>
+    </div>
+
+    <div class="progress-wrap" aria-hidden="true">
+      <div class="progress-bar safe" id="desc-progress"></div>
+    </div>
+
+    <div class="counter-row">
+      <span class="counter-badge status-safe" id="desc-count">
+        <span class="count-num">0</span>&nbsp;/ 160 chars
+      </span>
+    </div>
+
+    <p class="status-msg safe" id="desc-status">✅ Good length (0/160)</p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 3 — SERP PREVIEW
+  ════════════════════════════════════════════ -->
+  <section class="card fade-in" id="section-serp" aria-labelledby="serp-heading">
+    <div class="section-label">
+      <div class="icon icon-green" aria-hidden="true">🌐</div>
+      <div>
+        <h2 id="serp-heading">Live Google SERP Preview</h2>
+        <span class="sub">See how your snippet may look in Google search results</span>
+      </div>
+    </div>
+
+    <div class="serp-card" role="region" aria-label="Google search result preview">
+      <!-- Domain row -->
+      <div class="serp-domain-row">
+        <div class="serp-favicon" aria-hidden="true"></div>
+        <div>
+          <div class="serp-site-name">yourwebsite.com</div>
+          <div class="serp-url-path">https://yourwebsite.com › page-name</div>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <a class="serp-title serp-placeholder" id="serp-title" href="#" tabindex="-1" aria-label="SERP title preview">
+        Your page title will appear here…
+      </a>
+
+      <!-- Description -->
+      <p class="serp-desc serp-placeholder" id="serp-desc">
+        Your meta description will appear here. Write a compelling summary that encourages users to click your link.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 4 — QUICK ACTIONS
+  ════════════════════════════════════════════ -->
+  <section class="card fade-in" id="section-actions" aria-labelledby="actions-heading">
+    <div class="section-label">
+      <div class="icon icon-orange" aria-hidden="true">⚡</div>
+      <div>
+        <h2 id="actions-heading">Quick Actions</h2>
+        <span class="sub">Copy or reset your content in one click</span>
+      </div>
+    </div>
+
+    <div class="action-row">
+      <button id="copy-title-btn" class="btn btn-ghost btn-sm" aria-label="Copy meta title to clipboard">
+        📋 Copy Title
+      </button>
+      <button id="copy-desc-btn" class="btn btn-ghost btn-sm" aria-label="Copy meta description to clipboard">
+        📋 Copy Description
+      </button>
+      <button id="reset-btn" class="btn btn-danger btn-sm" aria-label="Reset all fields">
+        ↺ Reset All
+      </button>
+    </div>
+
+    <hr class="divider" />
+
+    <p style="font-size:.78rem; color:var(--text-muted); line-height:1.65;">
+      💡 <strong style="color:var(--text-secondary)">Keyboard shortcut:</strong>
+      Press <kbd style="background:var(--bg-input);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.75rem;">Ctrl</kbd> +
+      <kbd style="background:var(--bg-input);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.75rem;">Shift</kbd> +
+      <kbd style="background:var(--bg-input);border:1px solid var(--border);border-radius:4px;padding:1px 6px;font-size:.75rem;">R</kbd>
+      to reset all fields instantly.
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 5 — SEO TIPS
+  ════════════════════════════════════════════ -->
+  <section class="card fade-in" id="section-tips" aria-labelledby="tips-heading">
+    <div class="section-label">
+      <div class="icon icon-orange" aria-hidden="true">💡</div>
+      <div>
+        <h2 id="tips-heading">SEO Tips for Better Snippets</h2>
+        <span class="sub">Beginner-friendly advice to boost click-through rate</span>
+      </div>
+    </div>
+
+    <div class="tips-grid">
+      <div class="tip-item">
+        <div class="tip-icon">🎯</div>
+        <div class="tip-title">Be Keyword-Focused</div>
+        <div class="tip-text">Place your primary keyword near the start of the title. Google bolds matching words, improving visibility.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">💎</div>
+        <div class="tip-title">Show Clear Value</div>
+        <div class="tip-text">Add a benefit or unique value in your description. Tell searchers exactly what they'll gain by clicking.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">🚫</div>
+        <div class="tip-title">Avoid Keyword Stuffing</div>
+        <div class="tip-text">Repeating keywords looks spammy. Use natural language and synonyms. Write for humans, not just algorithms.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">✂️</div>
+        <div class="tip-title">Keep It Concise</div>
+        <div class="tip-text">Long titles get truncated with "…" in search results. Aim for 50–60 characters to display fully.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">📣</div>
+        <div class="tip-title">Add a Call to Action</div>
+        <div class="tip-text">Descriptions with action words like "Learn", "Discover", or "Get" tend to earn higher click-through rates.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">🔍</div>
+        <div class="tip-title">Match Search Intent</div>
+        <div class="tip-text">Align your snippet with what users are searching for. A relevant description reduces bounce rate significantly.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">🏪</div>
+        <div class="tip-title">Include Brand Name</div>
+        <div class="tip-text">Adding your brand at the end of the title (e.g., "· Brand") builds trust and recognition in search results.</div>
+      </div>
+      <div class="tip-item">
+        <div class="tip-icon">📱</div>
+        <div class="tip-title">Think Mobile First</div>
+        <div class="tip-text">Mobile SERPs show fewer characters. Keep your most important words in the first 50 characters of the title.</div>
+      </div>
+    </div>
+
+    <!-- Real-world example -->
+    <hr class="divider" />
+    <div style="background:var(--bg-input);border:1px solid var(--border);border-radius:var(--radius-md);padding:16px 18px;margin-top:2px;">
+      <p style="font-size:.8rem;font-weight:700;color:var(--text-primary);margin-bottom:10px;">📖 Real-World Example</p>
+      <div style="display:grid;gap:10px;">
+        <div>
+          <p style="font-size:.72rem;font-weight:600;color:var(--red);margin-bottom:3px;">❌ Weak Title:</p>
+          <p style="font-size:.82rem;color:var(--text-secondary);font-style:italic;">"Home | Welcome | Bakery Shop Page Main"</p>
+        </div>
+        <div>
+          <p style="font-size:.72rem;font-weight:600;color:var(--green);margin-bottom:3px;">✅ Strong Title:</p>
+          <p style="font-size:.82rem;color:var(--text-secondary);font-style:italic;">"Fresh Custom Cakes in Paris | Same Day Bakery Orders"</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════
+       SECTION 6 — FEATURES AT A GLANCE
+  ════════════════════════════════════════════ -->
+  <section class="card fade-in" id="section-features" aria-labelledby="features-heading">
+    <div class="section-label">
+      <div class="icon icon-blue" aria-hidden="true">✨</div>
+      <div>
+        <h2 id="features-heading">Features at a Glance</h2>
+        <span class="sub">Everything you need · No frameworks · No sign-up</span>
+      </div>
+    </div>
+
+    <div class="features-list">
+      <div class="feature-chip"><span class="chip-dot"></span>Live title counter</div>
+      <div class="feature-chip"><span class="chip-dot"></span>Live description counter</div>
+      <div class="feature-chip"><span class="chip-dot"></span>Google SERP preview</div>
+      <div class="feature-chip"><span class="chip-dot"></span>Pixel-width estimate</div>
+      <div class="feature-chip"><span class="chip-dot"></span>Color-coded alerts</div>
+      <div class="feature-chip"><span class="chip-dot"></span>Progress bar indicator</div>
+      <div class="feature-chip"><span class="chip-dot"></span>Copy to clipboard</div>
+      <div class="feature-chip"><span class="chip-dot"></span>One-click reset</div>
+      <div class="feature-chip"><span class="chip-dot"></span>Dark &amp; light mode</div>
+      <div class="feature-chip"><span class="chip-dot"></span>Mobile responsive</div>
+      <div class="feature-chip"><span class="chip-dot"></span>Keyboard shortcuts</div>
+      <div class="feature-chip"><span class="chip-dot"></span>Zero dependencies</div>
+    </div>
+
+    <hr class="divider" />
+    <p style="font-size:.78rem;color:var(--text-muted);line-height:1.65;text-align:center;">
+      Built with pure <strong style="color:var(--text-secondary)">HTML · CSS · JavaScript</strong>
+      &nbsp;·&nbsp; No frameworks &nbsp;·&nbsp; Instant load
+      &nbsp;·&nbsp; <a href="https://xn--compteur-de-caractres-54b.fr/" style="color:var(--accent);text-decoration:none;" target="_blank" rel="noopener">compteur-de-caractères.fr</a>
+    </p>
+  </section>
+
+  <!-- ── Footer ────────────────────────────────── -->
+  <footer class="site-footer fade-in">
+    <p>
+      <strong>Meta Title &amp; Description Character Counter</strong>
+      &nbsp;·&nbsp; Free SEO Tool
+    </p>
+    <p style="margin-top:4px;">
+      Also available at&nbsp;
+      <a href="https://xn--compteur-de-caractres-54b.fr/" target="_blank" rel="noopener">
+        compteur-de-caractères.fr
+      </a>
+      &nbsp;·&nbsp; Built with ❤️ for the SEO community
+    </p>
+    <p style="margin-top:6px;font-size:.72rem;">
+      Optimized for Google SERP · Works on Desktop, Tablet &amp; Mobile
+    </p>
+  </footer>
+
+</div><!-- /.app-wrapper -->
+
+<!-- Screen-reader only utility -->
+<style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}</style>
+
+<script src="script.js"></script>
+</body>
+</html>

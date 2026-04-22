@@ -145,16 +145,6 @@ Fresh Custom Cakes in Paris | Same Day Bakery Orders
 
 ---
 
-## 🌐 Deploy to GitHub Pages
-
-1. Fork or clone this repository
-2. Go to **Settings → Pages**
-3. Under **Source**, select `main` branch and `/ (root)`
-4. Click **Save**
-5. Your site will be live at `https://yourusername.github.io/repo-name/`
-
----
-
 ## 🔧 Built With
 
 | Technology | Purpose |
